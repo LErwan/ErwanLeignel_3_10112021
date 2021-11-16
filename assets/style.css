@@ -1,0 +1,349 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+h1, h3{font-family:'Shrikhand';}
+p, h2, li, h4{font-family: 'roboto';}
+img{object-fit: cover;}
+ul{list-style: none;}
+a{text-decoration: none; color: black;}
+i{color: black;}
+/*LOADER*/
+.section-loader{
+    background-image: linear-gradient(to right,#FF79DA,#9356DC);opacity: 0.95;
+    height: 100vh;
+    position: fixed;
+    inset: 0; /*remplace top bottom left et right 0 pour la posiion*/
+    z-index: 1; /*permet de lme faire passer au dessus des éléments*/
+    font-size: 40px;color: #fff;text-align: center;line-height: 800px;font-family: 'Shrikhand';
+    animation: disappear 10ms forwards; /*durée de l'animation + ne revient plus*/
+    animation-delay: 1.5s; /*durée de l'animation*/
+    transform-origin: top;
+}
+@keyframes disappear{ /*définir étapes d'animation from to*/
+    to{
+        transform: scale(0); /*disparition*/
+    }
+}
+.loader{
+    width: 50px;
+    height: 50px;
+    display: inline-block; /*pour qu'il s'aligne à gauche du texte*/
+    vertical-align: middle; /*pour centrer les éléments*/
+    position: relative; /*on met le parent en position relative*/
+}
+.loader-quart{
+    border-radius: 50px; /*pour créer un cercle*/
+    border: 6px solid rgba(255, 255, 255, 0.4); /*opacité de 40%*/
+}
+.loader-quart:after{
+    content: '';
+    position: absolute;
+    top: -6px; left: -6px; bottom: -6px; right: -6px; /*on déplace la bordure car elle sort de l'élément*/
+    border: 6px solid transparent;
+    border-top-color: #fff;
+    border-radius: 50px; /*pour arrondir la barre*/
+    animation: spin 1s linear  infinite; /*nom de l'animation temps fonction d'animation (ici infini) */
+}
+@keyframes spin{ /*on créer une animation qu'on nomme spin car effet de rotation*/
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);} /*360 deg = tour complet*/
+}
+/*header*/
+header{display: flex;flex-direction: column;max-width: 1100px;margin: 20px auto;}
+header .logo{display: flex;justify-content: center;}
+header  img{width: 290px;}
+header .localisation{margin-top: 20px;padding: 10px; background-color: #F2F2F2;display: flex;justify-content: center;align-items: center;box-shadow: 0px 12px 10px -15px rgb(153, 152, 152) inset;}
+header .localisation p{font-size: 18px;font-weight: 600;color: rgb(75, 74, 74);}
+header .localisation i{margin-right: 10px;color: rgb(75, 74, 74);}
+/*section-1-reservation-fonctionnement*/
+#section-1 .container{ 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    max-width: 1100px; 
+    width: auto;
+    margin: 25px auto; 
+    padding: 0 50px; 
+}
+#section-1  h2{
+    font-size: 33px;
+    font-weight: 900;
+}
+#section-1 .container .left{
+    max-width: 380px;
+}
+#section-1 .left h2{
+    line-height: 30px;
+}
+#section-1 .left p{
+    font-size: 20px;
+    font-weight: 300;
+}
+#section-1 a{
+    background-image: linear-gradient(to right,#FF79DA,#9356DC);
+    padding: 15px 20px;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-size: 16.5px;
+    font-weight: 400;
+    font-family: 'roboto';
+}
+#section-1 a:hover{
+    opacity: 92%;
+    box-shadow: 0px 0px 6px 1px rgba(80, 80, 80, 0.808);
+}
+#section-1 .left .bouton{
+    margin: 35px 0 0 45px;
+    display: flex;
+    justify-content: left;
+}
+#section-1 .right{
+    display: flex;
+    flex-direction: column;
+}
+#section-1 .right h2{
+    margin-left: -25px;
+}
+
+#section-1  ul{
+    margin-left: -30px;
+}
+#section-1 li{
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 0px 10px 1px rgba(119, 119, 119, 0.4);
+    padding: 20px;
+    border-radius: 17px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    background-color: #F2F2F2;
+}
+#section-1 .right  li:hover{
+    background-color: #9256dc3d;
+}
+#section-1 .num{
+    width: 10px;
+    height: 10px;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    background-color: #9356DC;
+    border-radius: 15px;
+    margin:0 15px 0 -32px;
+    color: white;
+    font-weight: 500;
+}
+#section-1 i{
+    margin-right: 10px;
+    font-size: 20px;
+    color: rgb(75, 74, 74);
+}
+#section-1 .container .right ul li .icon-purple i{
+    color: #9356DC;
+}
+/*section-2-restaurants*/
+#section-2{
+    max-width: 1100px;
+    margin: 25px auto; 
+    padding: 15px 10px;
+    background-color: #F2F2F2;
+    border-radius: 20px; 
+}
+#section-2 .container{
+    max-width: 1100px;
+    width: auto;
+    margin: 10px auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+#section-2 .line-1-location{
+    display: flex;
+    justify-content: space-between;
+}
+#section-2 .bloc{
+    padding: 10px;
+    width: 500px;
+    margin: 15px 0;
+    background-color: white;
+    border-radius: 30px;
+    position: relative;
+    box-shadow: 0px 0px 10px 1px rgba(119, 119, 119, 0.4);
+}
+#section-2 .bloc:hover{
+    filter: opacity(90%);
+}
+#section-2 .container img{
+    width: 100%;
+    height: 300px;
+    border-radius: 20px 20px 0 0;
+}
+#section-2 .description{
+    margin: 10px 0 10px 15px;
+    line-height: 25px;
+}
+#section-2 .more{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#section-2 .more i{
+    font-size: 25px;
+    margin-right: 15px;
+}
+/*NOUVEAU*/
+#section-2 .bloc .new{
+    background-color: #99E2D0;
+    padding: 8px 15px;
+    width: 70px;
+    position: absolute;
+    right: 25px;
+    top: 25px;
+}
+#section-2 .bloc .new p{
+    color: #228a44;
+    font-size: 17px;
+    font-weight: 500;
+}
+/*BOTH*/
+#section-2 .bloc h4{
+    color: black;
+    font-size: 20px;
+}
+#section-2 .bloc p{
+    color: rgb(31, 30, 30);
+    font-weight: 400;
+    font-size: 19px;
+}
+/*COEUR*/
+#section-2 .like i{ /*on place le coeur sur l'autre*/
+    position: absolute;
+    right: 15px;
+    bottom: 35px;
+}
+#section-2 .fas{ /*fas = le coeur solide*/
+    color: transparent; /*coeur solid transparent*/
+    background-clip: text; /*on l'applique sur le texte*/
+    -webkit-background-clip: text; /*sert à la comptabilité*/
+    opacity: 0; /*on rend le solid invisible pour faire apparaître le regular */
+    transition: all 600ms ease-in-out;
+    background-image: linear-gradient(to top,#FF79DA,#9356DC); /*dégardé de couleur de bas en hat*/
+}
+#section-2 .fas:hover{
+    opacity: 1; /*on le rend visible quand on passe dessus*/
+    transform: translateY(-1%) scale(1.15); /*alignement vertical + zoom sur l'item*/
+}
+/*FOOTER*/
+footer .container{
+    max-width: 1200px;
+    width: auto;
+    height: 170px;
+    margin: 15px auto 0 auto;
+    background-color: rgb(46, 46, 46);
+    padding: 5px 15px;
+}
+footer h3{
+    color: rgb(255, 255, 255);
+    font-size: 29px;
+    font-weight: 100;
+}
+footer ul{
+    line-height: 30px;
+}
+footer i{
+    color: rgb(197, 195, 195);
+    font-size: 15px;
+    margin-right: 10px;
+}
+footer #fourchette{
+    margin-left: 8px;
+}
+footer a{
+    color: white;
+    font-size: 15px;
+    font-weight: 200;
+}
+footer a:hover{
+    border-bottom: 1.5px white solid;
+}
+@media screen and (max-width:830px){
+    #section-1 .container{
+        display: flex;
+        flex-direction: column;
+        margin: 25px 0; 
+        padding: 0px; 
+    }
+    #section-1 .back-grey{
+        background-color: #F2F2F2;
+        margin: -25px 0 25px 0;
+        height: 270px;
+        padding: 0px;
+        max-width: 830px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    #section-1 .back-grey h2{margin-top: 15px;}
+    #section-1 .container .left{
+        margin-bottom: 50px;
+    }
+    #section-1 .left h2, p{
+        text-align: center;
+    }
+    #section-1 h2{
+        margin-bottom: 19px;
+    }
+    #section-1 .container .left .bouton{
+        margin: 20px auto 45px auto;
+        display: flex;
+        justify-content: center;
+    }
+    #section-1 .right{
+        width: 100%;
+    }
+    #section-1 .right h2{
+        margin-left: 30px;
+    }
+    #section-1 .right ul {
+        margin-left: 40px;
+        width: 80%;
+    }
+    
+}
+@media screen and (max-width:1071px){
+    #section-2{
+        max-width: 1100px;
+        width: 100%;
+        margin: 25px auto; 
+        padding: 15px 0px;
+        border-radius: 0px; 
+    }
+    #section-2 h2{
+        margin-left: 16px;
+    }
+    #section-2 .container{
+        max-width: 100%;
+        margin: 0 18px 0 0;
+        padding: 5px;
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    #section-2 .line-1-location{
+        display: flex;
+        flex-direction: column;
+    }
+    #section-2 .bloc{
+        width: 100%;
+    }
+    #section-2 .container img{
+        width: 100%;
+        height: 180px;
+    }
+    #section-2 .bloc p{
+        text-align: left;
+    }
+}
