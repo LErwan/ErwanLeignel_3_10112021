@@ -113,7 +113,7 @@ header .localisation i{margin-right: 10px;color: rgb(75, 74, 74);}
 #section-1 li{
     display: flex;
     align-items: center;
-    box-shadow: 0px 0px 10px 1px rgba(119, 119, 119, 0.4);
+    box-shadow: 0px 0px 4px 1px rgba(119, 119, 119, 0.4);
     padding: 20px;
     border-radius: 17px;
     margin-bottom: 10px;
