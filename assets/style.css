@@ -310,7 +310,9 @@ footer a:hover{
         margin-left: 40px;
         width: 80%;
     }
-    
+    footer .container{
+        margin-top: -25px;
+    }
 }
 @media screen and (max-width:1071px){
     #section-2{
