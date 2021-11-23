@@ -289,5 +289,9 @@ footer a:hover{
     #section-1 .menu-list{
         width: 95%;
         margin: 10px 0;
-}
+    }
+    .ending-section{
+        width: 100%;
+        padding: 0;
+    }
 }
