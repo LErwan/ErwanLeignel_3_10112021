@@ -353,4 +353,22 @@ footer a:hover{
     #section-2 .bloc p{
         text-align: left;
     }
+    #section-2 .bloc .new{
+        display: flex;
+        justify-content: center;
+        padding: 8px 14px;
+        width: 50px;
+        position: absolute;
+        right: 15px;
+        top: 15px;
+    }
+    #section-2 .bloc .new p{
+        font-size: 14px;
+    }
+    
+    #section-2 .like i{ /*on place le coeur sur l'autre*/
+    position: absolute;
+    right: 15px;
+    bottom: 25px;
+}
 }
